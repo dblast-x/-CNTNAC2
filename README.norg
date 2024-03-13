@@ -1,0 +1,26 @@
+* CNTNAC2
+
+  /Counter of sells and 'IPV' organizer./
+
+
+** *Main Idea* >>
+   - A single page program to keep track of sells in a calm and clean way.
+
+
+** _PSEUDO_ >>
+   .      *Take input of elements*                                         .
+   ( /make this the home page and add a 'DONE' button that redirects to the
+   table of elements/ )
+   ..     *Create table of elements*                                       .
+   ...    *Add functionality to augment or decrement the element count*    .
+   ( /the augmentation has to be in a fresh page always to have a clear look
+   of what to input/ )
+   ....   *Add functionality to add new items*                             .
+   .....  *Add a log page to check the order/s if lost*                    .
+   ...... *Make a total count of the sells*                                .
+   ( /make this a page of the total of each element at the end of the day/ )
+   (( /add a total for the price eventually/ ))
+
+   ___
+* NOTES
+  - /Try to add tests to the project./
