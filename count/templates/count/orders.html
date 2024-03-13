@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Enter Orders</h1>
+    <br>
+    <form method="POST">
+        {% csrf_token %} <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <input type="number" id="item_{{ item.id }}" name="item_{{ item.id }}"
+                            value="{{ item.quantity }}" min="0">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <button type="submit">Submit Order</button>
+        <button type="submit"><a href="{% url 'count:new_item' %}">Add New Item</a></button>
+    </form>
+
+    <script>
+        function incrementQuantity(itemId) {
+            // Get the quantity input element
+            const quantityInput = document.getElementById(`item_${itemId}`);
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+
+        function decrementQuantity(itemId) {
+            // Get the quantity input element
+            const quantityInput = document.getElementById(`item_${itemId}`);
+            quantityInput.value = Math.max(0, parseInt(quantityInput.value) - 1);
+        }
+    </script>
+</body>
+
+</html>

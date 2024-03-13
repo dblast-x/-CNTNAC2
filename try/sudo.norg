@@ -1,0 +1,12 @@
+* CNTnACC
+
+  /The goal is to have a program which takes the list of objects
+  as an input in the WriteNewEntry page, then creates a table with
+  those elements, and logs the counts the user is entering./
+
+  - .      take input of objects.
+  - ..     write table.
+  - ...    take input of counts.
+  - ....   log counts.
+  - .....  take last call.
+  - ...... give the total of each element as the result.
