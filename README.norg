@@ -15,6 +15,7 @@
    ...    *Add functionality to augment or decrement the element count*    .
    ( /the augmentation has to be in a fresh page always to have a clear look
    of what to input/ )
+   (( each element 'order' count has to be restored to 0 after every post ))
    ....   *Add functionality to add new items*                             .
    .....  *Add a log page to check the order/s if lost*                    .
    ...... *Make a total count of the sells*                                .
@@ -24,3 +25,5 @@
    ___
 * NOTES
   - /Try to add tests to the project./
+** _TODO_:
+   - fix the orders issue: track the orders in a oder_log db and show them in the page.
