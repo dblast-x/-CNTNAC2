@@ -26,4 +26,4 @@
 * NOTES
   - /Try to add tests to the project./
 ** _TODO_:
-   - fix the orders issue: track the orders in a oder_log db and show them in the page.
+   - fix the orders issue: track the orders in a order_log db and show them in the page.

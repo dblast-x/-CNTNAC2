@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html>
+{% extends 'count/base.html' %}
+{% block content %}
+<h1>Delete Item</h1>
 
-<body>
-    <h1>Delete Item</h1>
+{% if error %}
+<p style="color: red;">{{ error }}</p>
+{% endif %}
 
-    {% if error %}
-    <p style="color: red;">{{ error }}</p>
-    {% endif %}
-
-    <form action="." method="POST">
-        {% csrf_token %}
-        <label for="item_name">Item Name:</label><br>
-        <input type="text" id="item_name" name="item_name" placeholder="Enter item name"><br><br>
-        <button type="submit" name="confirm_delete">Confirm Delete</button>
-        <button type="submit" name="confirm_delete"><a href="{% url 'count:home' %}">Done</a></button>
-    </form>
-</body>
-
-</html>
+<form action="." method="POST">
+    {% csrf_token %}
+    <label for="item_name">Item Name:</label><br>
+    <input type="text" id="item_name" name="item_name" placeholder="Enter item name"><br><br>
+    <button type="submit" name="confirm_delete">Confirm Delete</button>
+    <button type="submit" name="confirm_delete"><a href="{% url 'count:items' %}">Back</a></button>
+</form>
+{% endblock %}

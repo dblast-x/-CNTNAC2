@@ -1,3 +1,5 @@
+{% extends 'count/base.html' %}
+{% block content %}
 <h1>Order Log</h1>
 
 {% if orders %}
@@ -19,4 +21,6 @@
 </table>
 {% else %}
 <p><i>no order yet..</i></p>
+
 {% endif %}
+{% endblock %}

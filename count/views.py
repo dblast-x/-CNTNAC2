@@ -3,8 +3,8 @@ from .models import Item, Order
 from django.views.decorators.csrf import csrf_protect  # Ensure CSRF protection
 
 
-@csrf_protect  # Apply CSRF protection decorator
-def orders_view(request):
+@csrf_protect
+def orders(request):
     # Get all items from the database
     items = Item.objects.all()
 
@@ -15,7 +15,7 @@ def orders_view(request):
                 item_pk = int(item_id.split("_")[1])  # Extract item ID
                 try:
                     item = Item.objects.get(pk=item_pk)
-                    # Update quantity (ensure it doesn't go below 0)
+                    # BUG: there's gotta be a better way to decrement the quantity
                     item.quantity += int(quantity)
                     item.save()
                 except Item.DoesNotExist:
@@ -33,17 +33,22 @@ def orders_view(request):
     return render(request, "count/orders.html", context)
 
 
+def list_items(request):
+    items = Item.objects.all()
+    return render(request, 'count/items.html', {'items': items})
+
+
 @csrf_protect  # Apply CSRF protection decorator
-def new_item_view(request):
+def add_item(request):
     if request.method == "POST":
         new_item_name = request.POST["new_item_name"]
         new_item = Item.objects.create(name=new_item_name)
         return redirect("count:new_item")
         # Consider adding a success message or redirecting to a different page
-    return render(request, "count/new_item.html")
+    return render(request, "count/add_item.html")
 
 
-def delete_view(request):
+def delete_item(request):
     if request.method == "POST":
         # Validate and handle potential errors
         try:
@@ -71,4 +76,5 @@ def order_log(request):
         "-created_at"
     )  # Order by creation date descending
     context = {"orders": orders}
+
     return render(request, "count/order_log.html", context)
