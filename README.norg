@@ -9,15 +9,15 @@
 
 ** _PSEUDO_ >>
    .      *Take input of elements*                                         .
-   ( /make this the home page and add a 'DONE' button that redirects to the
-   table of elements/ )
    ..     *Create table of elements*                                       .
    ...    *Add functionality to augment or decrement the element count*    .
    ( /the augmentation has to be in a fresh page always to have a clear look
    of what to input/ )
-   (( each element 'order' count has to be restored to 0 after every post ))
+   (( /each element 'order' count has to be restored to 0 after every post/ ))
    ....   *Add functionality to add new items*                             .
+   ( /add a button to edit and delete items/ )
    .....  *Add a log page to check the order/s if lost*                    .
+   ( /add a button to edit and delete orders/ )
    ...... *Make a total count of the sells*                                .
    ( /make this a page of the total of each element at the end of the day/ )
    (( /add a total for the price eventually/ ))

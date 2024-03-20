@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CountConfig(AppConfig):
+class OrdersConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'count'
+    name = 'orders'
